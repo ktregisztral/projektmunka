@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="card w-70 mx-auto">
+        <div class="card-body">
+            <h5 class="card-title">Foglalás</h5>
+
+            <form [formGroup]="reservationForm" (ngSubmit)="newReservation(reservationForm.value)">
+                <div class="form-floating mb-3">
+                    <input formControlName="lastName" name="lastName" type="text" class="form-control required" id="lastName" placeholder="Vezetéknév">
+                    <label for="lastName">Vezetéknév</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input formControlName="firstName" name="firstName" type="text" class="form-control required" id="firstName" placeholder="Keresztnév">
+                    <label for="firstName">Keresztnév</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input formControlName="birthDate" name="birthDate" type="date" class="form-control required" id="birthDate" placeholder="Születési dátum">
+                    <label for="birthDate">Születési dátum</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input formControlName="telephone" name="telephone" type="tel" class="form-control required" id="telephone" placeholder="Telefonszám">
+                    <label for="telephone">Telefonszám</label>
+                </div>
+                <div formGroupName="address">
+                    <div class="form-floating mb-3">
+                        <input formControlName="zipCode" name="zipCode" type="text" class="form-control required" id="zipCode" placeholder="Irányítószám">
+                        <label for="zipCode">Irányítószám</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input formControlName="city" name="city" type="text" class="form-control required" id="city" placeholder="Város">
+                        <label for="city">Város</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input formControlName="street" name="street" type="text" class="form-control required" id="street" placeholder="Utca">
+                        <label for="street">Utca</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input formControlName="houseNumber" name="houseNumber" type="text" class="form-control required" id="houseNumber" placeholder="Házszám">
+                        <label for="houseNumber">Házszám</label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input formControlName="checkIn" name="checkIn" type="date" class="form-control required" id="checkIn" placeholder="Érkezés napja">
+                    <label for="checkIn">Érkezés napja</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input formControlName="checkOut" name="checkOut" type="date" class="form-control required" id="checkOut" placeholder="Távozás napja">
+                    <label for="checkOut">Távozás napja</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input formControlName="howManyPerson" name="howManyPerson" type="number" class="form-control required" id="howManyPerson" placeholder="Hány fő">
+                    <label for="howManyPerson">Hány fő</label>
+                </div>
+                <div class="form-check mb-3">
+                    <input formControlName="isDataTrue" class="form-check-input required" type="checkbox" value="true" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Kijelentem, hogy az általam megadott adatok a valóságnak megfelelnek.
+                    </label>
+                  </div>
+
+                <button [disabled]="reservationForm.invalid" type="submit" class="btn btn-primary">Foglalás rögzítése</button>
+              </form>
+        </div>
+    </div>
+</div>

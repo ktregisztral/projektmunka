@@ -1,0 +1,20 @@
+<div class="container ">
+    <div class="card mx-auto mt-5 mb-5 w-50 text-center">
+        <div class="card-body">
+            <h4>Regisztráció</h4>
+            <div class="form-floating mb-3">
+                <input [(ngModel)]="email" name="email" type="email" class="form-control" id="floatingInput" placeholder="peldapeter@minta.com">
+                <label for="floatingInput">E-mail cím</label>
+              </div>
+              <div class="form-floating">
+                <input [(ngModel)]="password" name="password" type="password" class="form-control" id="floatingPassword" placeholder="Jelszó">
+                <label for="floatingPassword">Jelszó</label>
+              </div>
+              <button (click)="signUp(email, password)" class="btn btn-outline-secondary my-3 w-100">Regisztráció</button><br>
+              <small>Van már fiókja? </small>
+              <a routerLink="/sign-in"><small>Jelentkezzen be!</small></a><br>
+              <small>Vagy regisztráljon Google fiókjával:</small><br>
+              <button (click)="googleAuth()" class="btn btn-outline-secondary mt-3"><i class="bi bi-google"></i></button>
+        </div>
+    </div>
+</div>
